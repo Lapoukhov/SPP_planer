@@ -16,7 +16,7 @@
                             <div class="input-group-text">City</div>
                         </div>
                         
-                        <?php echo $this->tag->textField(["city", 'class' => 'form-control', 'id' => 'inlineFormInputGroup', 'placeholder' => 'Enter city']); ?>       
+                        <?php echo $this->tag->textField(["city", 'class' => 'form-control', 'id' => 'inlineFormInputGroup', 'placeholder' => 'Enter city' , 'pattern'='^[а-яА-ЯёЁa-zA-Z\s-]+$']); ?>       
                     
                     </div>
                 </div>
