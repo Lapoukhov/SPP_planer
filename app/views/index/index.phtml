@@ -1,0 +1,94 @@
+<div class="search-block">
+    <div class="col-sm-6 city-search">
+
+        <h2>Weather in your city</h2>
+        
+        <hr>
+        
+        <?php echo $this->tag->form("weather/cityForecast"); ?>
+            
+            <div class="form-row align-items-center">
+                
+                <div class="col-auto input-group-name"> 
+                    <div class="input-group mb-2"> 
+
+                        <div class="input-group-prepend">   
+                            <div class="input-group-text">City</div>
+                        </div>
+                        
+                        <?php echo $this->tag->textField(["city", 'class' => 'form-control', 'id' => 'inlineFormInputGroup', 'placeholder' => 'Enter city']); ?>       
+                    
+                    </div>
+                </div>
+
+                <div class="col-auto city-search">  
+                    <?php echo $this->tag->submitButton(["Search", 'class' => 'btn btn-success mb-2']); ?>
+                </div>
+
+            </div>
+        </form>
+
+        <h5>Search engine is very flexible. How it works:</h5>
+
+        <ul>
+            <li>To make it more precise put the city's name, comma, 2-letter country code (ISO3166). </li>
+            <li>You will get all proper cities in chosen country.</li>
+            <li>The order is important - the first is city name then comma then country.</li>
+            <li>Example - London, GB or New York, US.</li>
+        </ul>
+
+    </div>
+
+    <div class="col-sm-6">
+
+        <h2>Coordinate forecast</h2>
+        
+        <hr>
+        
+        <?php echo $this->tag->form("weather/coordinateForecast"); ?>
+        
+            <div class="form-row align-items-center coord-group">
+
+                <div class="col-auto coord-input">
+                    <div class="input-group mb-2"> 
+
+                        <div class="input-group-prepend">   
+                            <div class="input-group-text">latitude</div>
+                        </div>
+
+                        <?php echo $this->tag->textField(["lat", 'class' => 'form-control input-dis']); ?>
+                    
+                    </div>
+                </div>
+
+                <div class="col-auto coord-input">
+                    <div class="input-group mb-2"> 
+
+                        <div class="input-group-prepend">   
+                            <div class="input-group-text">longitude</div>
+                        </div>
+
+                        <?php echo $this->tag->textField(["lng", 'class' => 'form-control input-dis']); ?>
+                    
+                    </div>
+                </div>
+
+                <div class="col-auto coord-search">  
+                    <?php echo $this->tag->submitButton(["Search", 'class' => 'btn btn-success mb-2']); ?>
+                </div>
+
+            </div>
+        </form>
+
+        <div id="map"></div>
+
+    </div>
+</div>
+
+<hr>
+
+<div class="history">
+    <h2>View query history<img src="http://localhost:8000/img/history.png" width="45" height="45" class="img-history d-inline-block align-top"></h2>
+
+    <?php echo $this->tag->linkTo(["weather/showHistory", "History", 'class' => 'btn btn-primary btn-success']); ?>
+</div>

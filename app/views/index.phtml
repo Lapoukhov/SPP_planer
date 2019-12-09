@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Weather Service</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('http://localhost:8000/img/logo.png')?>"/>
+        <link rel="stylesheet" href="http://localhost:8000/css/style.css">
+        <script type="text/javascript" src="http://localhost:8000/js/map.js"></script>
+    </head>
+    <body onload="initMap()">
+
+        <div class="navstyle">
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">
+                    <img src="http://localhost:8000/img/log.png" width="30" height="30" class="d-inline-block align-top">
+                    Weather Service
+                </a>
+            </nav>
+        </div>
+        
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Current weather and forecasts in your city</h1>
+                <p class="lead">Weather forecast provided for personal non-commercial use only.</p>
+            </div>
+        </div>
+        
+        <div class="container content-div">
+            <?php echo $this->getContent(); ?>
+        </div>
+
+        <footer class="page-footer font-small teal pt-4">
+
+            <div class="container text-center text-md-left">
+
+                <div class="row">
+
+                    <div class="col-md-4 col-lg-4 col-xl-4">
+
+                        <h6 class="text-uppercase font-weight-bold">Current weather data</h6>
+                        <hr class="footer-hr teal accent-3 mb-4 mt-0 d-inline-block mx-auto">
+                        <p>Access current weather data for any location on Earth including over 200,000 cities! Current weather is frequently updated based on global models and data from more than 40,000 weather stations.
+                        </p>
+
+                    </div>
+                    
+                    <div class="col-md-4 col-lg-4 col-xl-4">
+                        <h6 class="text-uppercase font-weight-bold">Time zone</h6>
+                        <hr class="footer-hr teal accent-3 mb-4 mt-0 d-inline-block mx-auto">
+                        <p>The weather forecast is displayed in accordance with your local time. Please pay attention to it when you will watch the weather in another time zone.</p>
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 col-xl-4">
+                        <h6 class="text-uppercase font-weight-bold">Contact information</h6>
+                        <hr class="footer-hr teal accent-3 mb-4 mt-0 d-inline-block mx-auto">
+                        <p>
+                            Address :  New York, NY 10012, US</p>
+                        <p>
+                            Mail :  info@weatherservice.org</p>
+                        <p>
+                            Phone :  + 01 234 567 88</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="/"> Weather Service</a>
+            </div>
+
+        </footer>
+
+        <!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->
+
+        <!-- google maps -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsB2JdLlwtN9fO4lU1S8ffTtAczv3SA7c"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<div class="forecast">
+
+  <div class="col-sm-6 div-table-weather">
+
+  <?php
+
+    if($dataJson)
+    {
+   	  ?>
+
+   	  <h3><?php echo $dataJson->name . ", " . $dataJson->sys->country; ?><img src="http://localhost:8000/img/location.png" width="35" height="35" class="img-location d-inline-block align-top"></h3>
+
+   	  <table class="table table-hover">
+  		  <tbody>
+    		  <tr>
+      			<td>
+      				<img src="http://localhost:8000/img/temp.png" width="60" height="25" class="d-inline-block align-top">
+      				Temperature
+      			</td>
+      			<td> <?php echo $dataJson->main->temp . " ℃"; ?> </td>
+    		  </tr>
+    		  <tr>
+      			<td>
+      				<img src="http://localhost:8000/img/pressure.png" width="30" height="25" class="img-pressure d-inline-block align-top">
+      				Pressure
+      			</td>
+      			<td> <?php echo $dataJson->main->pressure . " hpa"; ?> </td>
+    		  </tr>
+    		  <tr>
+      			<td>
+      				<img src="http://localhost:8000/img/humidity.png" width="25" height="25" class="img-humidity d-inline-block align-top">
+      				Humidity
+      			</td>
+      			<td> <?php echo $dataJson->main->humidity . " %"; ?> </td>
+    		  </tr>
+    		  <tr>
+      			<td>
+      				<img src="http://localhost:8000/img/description.png" width="30" height="25" class="img-description d-inline-block align-top">
+      				Weather
+      			</td>
+      			<td> <?php echo $dataJson->weather[0]->description; ?> </td>
+    		  </tr>
+    		  <tr>
+      			<td>
+      				<img src="http://localhost:8000/img/wind.png" width="30" height="25" class="img-wind d-inline-block align-top">
+      				Wind speed
+      			</td>
+      			<td> <?php echo $dataJson->wind->speed . " m/s"; ?> </td>
+    		  </tr>
+  		  </tbody>
+	    </table>
+
+    <?php
+
+    }else{
+   	  echo "<br/>" . "Server is not available!";
+    } ?>
+
+  </div>
+
+  <div class="col-sm-6">
+	  <img src="http://localhost:8000/img/pogoda.png" width="550" height="354" class="img-weather d-inline-block align-top">
+  </div>
+</div>
+
+<?php echo $this->tag->linkTo(["index", "Back", 'class' => 'btn btn-success mb-2 back']); ?>

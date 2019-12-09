@@ -1,0 +1,35 @@
+<h2>History</h2>
+
+<?php
+
+echo $this->tag->linkTo(["index", "Back", 'class' => 'btn btn-success mb-2 back']);
+
+if ($history->count() > 0) 
+{
+    ?>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>City</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <td colspan="3">Quantity: <?php echo $history->count(); ?></td>
+        </tr>
+        </tfoot>
+        <tbody>
+        <?php foreach ($history as $request) { ?>
+            <tr>
+                <td><?php echo $request->date; ?></td>
+                <td><?php echo $request->time; ?></td>
+                <td><?php echo $request->city; ?></td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+    
+    <?php
+}
