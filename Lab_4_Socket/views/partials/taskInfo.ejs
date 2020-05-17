@@ -1,0 +1,52 @@
+<fieldset>
+    <legend><h2>Enter task info:</h2> </legend>
+    <form class="enter_info" name="taskInfo" id="taskForm" enctype="multipart/form-data">
+        <div class="column-block">
+            <div class="row-block">
+                <div class="column-block">
+                    <div class="enter-text">
+                        <p>Task:</p>
+                    </div>
+                    <div class="enter-text">
+                        <input type="text" name="taskName" autocomplete="off" id="task" required />
+                    </div>
+                    <div class="enter-text">
+                        <p>Deadline:</p>
+                        <input type="date" lang="en" id="datePicker" name="deadline" required />
+                    </div>
+                        
+                </div>
+                <div class="column-block">
+                    <div class="enter-text">
+                        <p>Status:</p>
+                    </div>
+                    <div class="enter-text">
+                        <div class="styled-select" >
+                            <select name="status" id="status">
+                                <option selected="selected" value="Not started">Not started</option>
+                                <option value="In progress">In progress</option>
+                                <option value="Done">Done</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="enter-text">
+                        <div class="upload-btn-wrapper">
+                                <button class="draw">Upload a file</button>
+                                <input type="file" id="siofu_input" name="myfile"/>
+                              </div>
+                    </div>	
+                </div>
+            </div>
+            <div class="row-block-end"> 
+                    <button type="submit" id="btnOK" class="draw">OK</button>
+                    <div id="del_btn">
+                        <input type="checkbox" id="check" name="check" />
+                        <label class="delete" for="check">
+                        <span></span>Delete
+                        </label>
+                    </div>
+                </div>
+        </div>
+    </form>
+</fieldset>

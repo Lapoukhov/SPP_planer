@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Task manager</title>
+	<link rel="stylesheet" href="css/table.css">
+	<link rel="stylesheet" href="css/checkbox.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/authForm.css">
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="funcApp.js" defer></script>
+
+</head>
+<body>
+	<div class="line"></div>
+	<div id="content" class="content">
+
+				<section id="home">
+
+							<img src="/img/task.png">
+
+				</section>
+	</div>
+	<div id="content" class="content">	
+				<section id="tasks">
+						
+					<div class="table-section-block" id="table-section-block1">
+							<% include ../partials/table %>
+					</div>
+				</section>
+	</div>
+	<div id="content" class="content">	
+				<section id="TaskInfo1" class="TaskInfo">
+						<% include ../partials/taskInfo %>
+					
+				</section>
+	</div>
+	<div id="content" class="content">	
+				<section id="authForm" class="authForm">
+					<% include ../partials/authForm %>
+				
+				</section>
+			<!-- </div>	 -->
+	</div>
+	</div>
+	<aside>
+		<div id="sidebar">
+			<div class="toggle-btn" onclick="toggleSidebar(this)">
+				<span class="bar1"></span>
+				<span class="bar2"></span>
+				<span class="bar3"></span>
+			</div>
+			<ul class="sidebar" id="sidebar1">
+				<li onclick="dropdownHome('toggle-btn')">Home</li>
+				<li onclick="dropdownTable('toggle-btn')">Tasks</li>
+				<li onclick="dropdownTaskInfo()">Create Task</li>
+				<li onclick="LogOut()">LogOut</li>
+			</ul>
+			<ul class="sidebar" id="sidebarForAuth">
+				<li onclick="dropdownHome('toggle-btn')">Home</li>
+				<li onclick="dropdownAuthForm()">LogIn</li>
+			</ul>
+		</div>
+
+	</aside>
+	
+</body>
+</html>
