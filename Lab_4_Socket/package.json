@@ -16,7 +16,7 @@
     "formidable": "^1.2.1",
     "fsp": "^0.1.2",
     "gulp": "^4.0.0",
-    "jsonwebtoken": "^8.5.0",
+    "jsonwebtoken": "^9.0.0",
     "lokijs": "^1.5.6",
     "mongoose": "^5.4.13",
     "multer": "^1.4.1",
